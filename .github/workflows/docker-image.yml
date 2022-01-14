@@ -22,7 +22,7 @@ jobs:
         # Container registry password
         password: ${ secrets.AZ_SP_CLIENT_SECRET }
         # Container registry server url
-        login-server: ${ secrets.AZ_ACR_NAME }
+        login-server: ${ secrets.AZ_ACR_NAME }.azurecr.io
     - name: Build the Docker image
       run: docker build . --file Dockerfile-linux --tag ${{ secrets.AZ_ACR_NAME }}.azurecr.io/randommultiplications:linux-latest #$(date +%s)
     - name: Push Image to ACR
