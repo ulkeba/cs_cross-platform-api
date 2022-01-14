@@ -24,6 +24,6 @@ jobs:
         # Container registry server url
         login-server: ${ secrets.AZ_ACR_NAME }
     - name: Build the Docker image
-      run: docker build . --file Dockerfile-linux --tag ${ secrets.AZ_ACR_NAME }azureacr.io/randommultiplications:linux-latest #$(date +%s)
+      run: docker build . --file Dockerfile-linux --tag ${ secrets.AZ_ACR_NAME }.azureacr.io/randommultiplications:linux-latest #$(date +%s)
     - name: Push Image to ACR
-      run: docker push ${ secrets.AZ_ACR_NAME }azureacr.io/randommultiplications:linux-latest
+      run: docker push ${ secrets.AZ_ACR_NAME }.azureacr.io/randommultiplications:linux-latest
