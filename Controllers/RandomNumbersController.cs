@@ -29,7 +29,7 @@ public class RandomNumbersController : ControllerBase
         if (toGenerate != null) {
             try {
                 int retVal = int.Parse(toGenerate);
-                _logger.LogInformation("Running " + retVal + " millions random multiplications.");
+                _logger.LogInformation("Creating " + retVal + " random numbers.");
                 return retVal;
             } catch (Exception e) {
                 _logger.LogError("Could not parse value of MILLION_NUMBERS_TO_GENERATE as string; using default value " + DefaultMillionsToGenerate + "(" + e.Message + ")");
