@@ -29,14 +29,14 @@ public class RandomNumbersController : ControllerBase
         if (toGenerate != null) {
             try {
                 int retVal = int.Parse(toGenerate);
-                _logger.LogInformation("Creating " + retVal + " random numbers.");
+                _logger.LogDebug("Creating " + retVal + " random numbers.");
                 return retVal;
             } catch (Exception e) {
                 _logger.LogError("Could not parse value of MILLION_NUMBERS_TO_GENERATE as string; using default value " + DefaultMillionsToGenerate + "(" + e.Message + ")");
                 return DefaultMillionsToGenerate;
             }
         } else {
-            _logger.LogInformation("No value of MILLION_NUMBERS_TO_GENERATE given; using default value " + DefaultMillionsToGenerate + ".");
+            _logger.LogDebug("No value of MILLION_NUMBERS_TO_GENERATE given; using default value " + DefaultMillionsToGenerate + ".");
             return DefaultMillionsToGenerate;
         }
     }
