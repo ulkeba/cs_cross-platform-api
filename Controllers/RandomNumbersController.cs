@@ -7,7 +7,7 @@ namespace SimpleApi.Controllers;
 [Route("[controller]")]
 public class RandomNumbersController : ControllerBase
 {
-    private const int DefaultMillionsToGenerate = 1;
+    private const int DefaultMillionsToGenerate = 10;
     private const int Factor = 1000000;
 
     private readonly ILogger<RandomNumbersController> _logger;
